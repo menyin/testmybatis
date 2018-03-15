@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cny.dao.StudentDao">
+    <resultMap id="studentMap" type="Student">
+        <id property="id" column="sId"/>
+        <result property="name" column="sName"/>
+        <result property="age" column="sAge"/>
+        <result property="cId" column="cId"/>
+    </resultMap>
+    <insert id="add" parameterType="Student">
+        insert into t_student(sId, sName, sAge,cId) VALUES (#{id},#{name},#{age},#{cId});
+    </insert>
+</mapper>

@@ -1,0 +1,36 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="testmybatis_spring0:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/testmybatis_spring0_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="testmybatis_spring0/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="testmybatis_spring0" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/spring_transation/org.springframework.orm-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/spring_transation/org.springframework.jdbc-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/spring_transation/org.springframework.transaction-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/spring_ioc/org.springframework.asm-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/spring_ioc/org.springframework.core-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/spring_ioc/org.springframework.beans-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/spring_ioc/org.springframework.context-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/spring_ioc/org.springframework.expression-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/spring_aop/aopalliance.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/spring_aop/cglib-2.2.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/spring_aop/aspectjweaver.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/spring_aop/org.springframework.aop-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/mysql_driver/mysql-connector-java-5.1.12-bin.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/mybatis_spring/mybatis-spring-1.1.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/mybatis/asm-3.3.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/mybatis/cglib-2.2.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/mybatis/mybatis-3.1.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/mybatis/commons-logging.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/connection_pool/c3p0-0.9.1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/spring_web/org.springframework.web-3.0.5.RELEASE.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/testmybatis_spring0/web/WEB-INF/lib/spring_web/org.springframework.web.servlet-3.0.5.RELEASE.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

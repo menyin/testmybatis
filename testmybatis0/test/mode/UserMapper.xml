@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--基本测试-->
+<!--<mapper namespace="dao.UserDao">
+
+</mapper>-->
+
+
+<!--curd测试-->
+<mapper namespace="dao.UserDao">
+    <resultMap id="userMap" type="mode.User">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+    </resultMap>
+
+    <!--基本测试-->
+    <insert id="add1">
+        insert into user(id,name,age) values('888','马云',50)
+    </insert>
+    <insert id="add2" parameterType="mode.User">
+        insert into user(id,name,age) values(#{id},#{name},#{age})
+    </insert>
+
+    <!--curd测试-->
+    <insert id="add" parameterType="mode.User">
+         insert into user(id,name,age) values(#{id},#{name},#{age})
+    </insert>
+    <delete id="delete" parameterType="int">
+        DELETE FROM user WHERE id=#{id}
+    </delete>
+    <update id="update" parameterType="mode.User">
+        UPDATE  user set name=#{name},age=#{age} WHERE id=#{id}
+    </update>
+    <!--<select id="selectAll" resultType="mode.User">-->
+    <select id="selectAll" resultMap="userMap">
+        SELECT * FROM user
+    </select>
+    <select id="selectOne" resultType="mode.User" parameterType="int">
+        SELECT * FROM user WHERE id=#{id}
+    </select>
+
+    <!--分页查询-->
+    <select id="pageListAll" resultMap="userMap" parameterType="map">
+         SELECT  * FROM user limit #{startIndex},#{pageSize}
+    </select>
+    <select id="pageListByCodition" resultMap="userMap" parameterType="map">
+        SELECT  * FROM user WHERE age > #{minAge} limit #{startIndex},#{pageSize}
+    </select>
+
+    <!--动态sql curd-->
+    <sql id="dynamicInsert_key">
+        <trim suffixOverrides=",">
+            <if test="id!=null">
+                id,
+            </if>
+            <if test="name!=null">
+                name,
+            </if>
+            <if test="age!=0 and age!=null">
+                age,
+            </if>
+        </trim>
+    </sql>
+    <sql id="dynamicInsert_val">
+        <trim suffixOverrides=",">
+            <if test="id!=null">
+                #{id},
+            </if>
+            <if test="name!=null">
+                #{name},
+            </if>
+            <if test="age!=0 and age!=null">
+                #{age},
+            </if>
+        </trim>
+    </sql>
+    <insert id="dynamicInsert" parameterType="mode.User">
+        INSERT INTO user(<include refid="dynamicInsert_key"/>) VALUES (<include refid="dynamicInsert_val"/>)
+    </insert>
+
+    <delete id="dynamicDelete">  /*parameterType="array" */
+        DELETE  FROM user WHERE id IN
+        <foreach collection="array" item="id" separator="," open="(" close=")" >
+            #{id}
+        </foreach>
+    </delete>
+
+    <update id="dynamicUpdate">
+        UPDATE user
+        <set>
+            <if test="name!=null">
+                name = #{name},
+            </if>
+            <if test="age!=null and age!=0">
+                age = #{age},
+            </if>
+        </set>
+        WHERE id=#{id}
+    </update>
+
+    <select id="dynamicSelect" parameterType="mode.User" resultMap="userMap">
+        SELECT * FROM user
+        <where>
+            <if test="name!=null">
+                and name=#{name}
+            </if>
+            <if test="age!=0 and age!=null">
+                and age=#{age}
+            </if>
+        </where>
+    </select>
+</mapper>

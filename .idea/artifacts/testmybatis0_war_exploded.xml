@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="testmybatis0:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/testmybatis0_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="testmybatis0" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="mybatis" module-name="testmybatis0" />
+          <element id="library" level="module" name="junit" module-name="testmybatis0" />
+          <element id="library" level="module" name="mysql_driver" module-name="testmybatis0" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="testmybatis0/web/Web" />
+    </root>
+  </artifact>
+</component>

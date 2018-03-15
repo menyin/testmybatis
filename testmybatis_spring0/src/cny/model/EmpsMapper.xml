@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cny.dao.impl.EmpsDaoImpl">
+    <resultMap id="empsMap" type="cny.model.Emps">
+        <id property="id" column="eId"/>
+        <result property="name" column="eName"/>
+        <result property="age" column="eAge"/>
+    </resultMap>
+    <insert id="add" parameterType="cny.model.Emps">
+        insert into t_emps(eId, eName, eSal) VALUES (#{id},#{name},#{sal});
+    </insert>
+</mapper>

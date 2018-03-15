@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--基本测试-->
+<!--<mapper namespace="dao.UserDao">
+
+</mapper>-->
+
+
+<!--curd测试-->
+<mapper namespace="dao.StudentDao">
+    <resultMap id="studentMap" type="mode.Student">
+        <id property="id" column="sId"/>
+        <result property="name" column="sName"/>
+        <association property="aClass" resultMap="dao.ClassDao.classMap"/>
+    </resultMap>
+    <select id="selectOne" resultMap="studentMap" parameterType="int">
+    SELECT s.sId,s.sName,s.sAge,c.cId,c.cName FROM t_student s INNER JOIN t_class c ON s.cId=c.cId WHERE s.sId=#{id}
+    </select>
+</mapper>

@@ -1,0 +1,6 @@
+CREATE TABLE t_emps
+(
+    eId VARCHAR(32) PRIMARY KEY NOT NULL,
+    eName VARCHAR(20),
+    eSal DECIMAL
+);
